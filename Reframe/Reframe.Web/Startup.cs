@@ -44,7 +44,11 @@ namespace Reframe.Web
             services.AddIdentity<User, IdentityRole<int>>()
                 .AddEntityFrameworkStores<ReframeDbContext>()
                 .AddDefaultTokenProviders();
-            services.AddScoped<NewService>();
+            services
+                .AddScoped<NewService>()
+                .AddScoped<PlaceService>()
+                .AddScoped<SubjectService>()
+                .AddScoped<CourseService>();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
