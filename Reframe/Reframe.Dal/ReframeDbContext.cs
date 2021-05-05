@@ -57,11 +57,6 @@ namespace Reframe.Dal
                     .IsRequired()
                     .HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Places)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.NoAction);
-
             });
 
             modelBuilder.Entity<Course>(entity =>

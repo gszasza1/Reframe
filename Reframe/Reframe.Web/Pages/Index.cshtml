@@ -14,10 +14,13 @@
     <div class="news-page">
         @foreach (var news in Model.AllNews)
         { 
+            <a asp-page="News" asp-route-id="@news.Id">
+
         <div>
             <p>@news.Description</p>
             <p class="date">@news.CreationTime</p>
         </div>
+            </a>
         }
         </div>
 </div>

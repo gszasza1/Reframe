@@ -1,0 +1,10 @@
+
+.index-page{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+.index-page > img{
+display: flex;
+}

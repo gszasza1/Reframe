@@ -15,8 +15,6 @@ namespace Reframe.Dal.Entities
         public string Name { get; set; }
         public int  NumberOfDesk { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
-        public virtual User User { get; set; }
-        public int UserId { get; set; }
 
     }
 }

@@ -27,6 +27,7 @@ namespace Reframe.Web
                     new CultureInfo("en"),
                     new CultureInfo("hu"),
                  };
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -37,9 +38,30 @@ namespace Reframe.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins(
+                            "localhost:4200",
+                            "http://localhost:4200",
+                            "https://localhost:4200",
+                            "*")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
+                    });
+            });
             services.AddDbContext<ReframeDbContext>(
                 option => option.UseSqlServer(Configuration.GetConnectionString(nameof(ReframeDbContext)))
                 );
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.LoginPath = "/Identity/Account/Login";
+                options.LogoutPath = "/Identity/Account/Logout";
+            });
 
             services.AddIdentity<User, IdentityRole<int>>()
                 .AddEntityFrameworkStores<ReframeDbContext>()
@@ -49,6 +71,7 @@ namespace Reframe.Web
                 .AddScoped<PlaceService>()
                 .AddScoped<SubjectService>()
                 .AddScoped<CourseService>();
+            services.AddControllers();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
@@ -77,6 +100,7 @@ namespace Reframe.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
