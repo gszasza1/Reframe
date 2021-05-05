@@ -1,0 +1,12 @@
+﻿@page
+@model Reframe.Web.Pages.AddNewsModel
+@{
+}
+<form asp-page-handler="AddNews" class="p-3">
+    <input  asp-for="PostNews.Description" />
+    <textarea asp-for="PostNews.Body" id="my-textarea"></textarea>
+  
+    <div class="d-flex justify-content-end my-2">
+        <button type="submit" class="btn btn-outline-primary">Hozzászólok</button>
+    </div>
+</form>

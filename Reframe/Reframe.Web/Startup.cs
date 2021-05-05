@@ -13,11 +13,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using Reframe.Web.Resources.Localization;
 
 namespace Reframe.Web
 {
     public class Startup
     {
+        public CultureInfo[] supportedCultures = new[]
+                {
+                    new CultureInfo("en"),
+                    new CultureInfo("hu"),
+                 };
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,7 +37,6 @@ namespace Reframe.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
             services.AddDbContext<ReframeDbContext>(
                 option => option.UseSqlServer(Configuration.GetConnectionString(nameof(ReframeDbContext)))
                 );
@@ -36,8 +44,8 @@ namespace Reframe.Web
             services.AddIdentity<User, IdentityRole<int>>()
                 .AddEntityFrameworkStores<ReframeDbContext>()
                 .AddDefaultTokenProviders();
-
             services.AddScoped<NewService>();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +69,7 @@ namespace Reframe.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseRequestLocalization();
 
             app.UseEndpoints(endpoints =>
             {

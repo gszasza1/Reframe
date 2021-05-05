@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="index-conteiner">
+    <div class="index-page">
+        <div>
+            <h3>Üdvözöllek</h3>
+            <h4>Webportálok házifeladat</h4>
+            <h1>Reframe</h1>
+        </div>
+        <div>
+            <img alt="logo" src="logo.svg" />
+        </div>
+    </div>
+    <div class="news-page">
+        @foreach (var news in Model.AllNews)
+        { 
+        <div>
+            <p>@news.Description</p>
+            <p class="date">@news.CreationTime</p>
+        </div>
+        }
+        </div>
 </div>

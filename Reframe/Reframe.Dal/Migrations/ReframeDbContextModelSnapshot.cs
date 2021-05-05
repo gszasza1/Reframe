@@ -207,6 +207,11 @@ namespace Reframe.Dal.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("(getdate())");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
                     b.HasKey("Id");
 
                     b.ToTable("MoreNews");

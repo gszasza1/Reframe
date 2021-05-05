@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Reframe.Dal.Dto;
+using Reframe.Dal.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,10 @@ namespace Reframe.Web.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IEnumerable<NewsBox> AllNews { get; set; }
+        public async Task OnGetAsync([FromServices] NewService newsService)
         {
-
+            AllNews = await newsService.GetAllNewsAsync();
         }
     }
 }

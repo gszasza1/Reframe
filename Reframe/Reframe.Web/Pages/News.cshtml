@@ -1,0 +1,11 @@
+﻿@page "{id:int}"
+@model Reframe.Web.Pages.NewsModel
+@{
+}
+<div class="specific-news-body">
+    <div>@Html.Raw(Model.SpecificNews.Body)</div>
+    <p>
+
+        @Model.SpecificNews.CreationTime
+    </p>
+</div>
