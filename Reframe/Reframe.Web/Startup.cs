@@ -81,7 +81,11 @@ namespace Reframe.Web
                 .AddScoped<SubjectService>()
                 .AddScoped<CourseService>();
             services.AddControllers();
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddRazorPages(
+                options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Auth");
+                }).AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
