@@ -40,12 +40,26 @@ namespace Reframe.Dal.Services
                 query = query.OrderByDescending(b => b.Title);
             }
 
-            return  await query.Select(x => new SubjectList() {
+            return  await query.Select(x => new SubjectList()
+            {
+                Id = x.Id,
                 Credit = x.Credit,
                 Description = x.Description,
-                Title=x.Title
+                Title=x.Title,
+                Creator = x.User.Name
             }).ToListAsync();
         }
+
+        public async Task<IEnumerable<SelectItem>> GetSubjectSelects()
+        {
+
+            return await _dbContext.Subjects.Select(x => new SelectItem()
+            {
+                Id = x.Id,
+                Title = x.Title,
+            }).ToListAsync();
+        }
+
         public async Task AddSubject(AddSubject addSubject)
         {
             var newSubject = new Subject()
@@ -59,6 +73,22 @@ namespace Reframe.Dal.Services
            await _dbContext.SaveChangesAsync();
            return;
 
+        }
+        public async Task<SpecificSubject> GetSpecSubjectByIdAsync(int id) {
+
+            var result = await _dbContext.Subjects.FirstOrDefaultAsync(s => s.Id == id);
+
+            var response = new SpecificSubject()
+            {
+                Id = result.Id,
+                Credit = result.Credit,
+                Description = result.Description,
+                Title = result.Title,
+                Creator = result.User.Name,
+                CreationTime = result.CreationTime,
+                Courses = result.Courses
+            };
+            return response;
         }
     }
 }

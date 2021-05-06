@@ -42,11 +42,23 @@ namespace Reframe.Dal.Services
         {
             return await _dbContext.Places
                 .OrderBy(x => x.CreationTime)
-                .Select(x=> new PlaceListItem() {
-                    CreationTime=x.CreationTime,
-                    Name=x.Name,
-                    Id=x.Id,
-                    NumberOfDesk=x.NumberOfDesk
+                .Select(x => new PlaceListItem()
+                {
+                    CreationTime = x.CreationTime,
+                    Name = x.Name,
+                    Id = x.Id,
+                    NumberOfDesk = x.NumberOfDesk
+                })
+                .ToListAsync();
+        }
+        public async Task<IEnumerable<SelectItem>> GetAllPlacesSelectAsync()
+        {
+            return await _dbContext.Places
+                .OrderBy(x => x.CreationTime)
+                .Select(x => new SelectItem()
+                {
+                    Title = x.Name,
+                    Id = x.Id,
                 })
                 .ToListAsync();
         }

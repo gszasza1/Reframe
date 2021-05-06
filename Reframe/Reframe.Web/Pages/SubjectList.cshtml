@@ -3,31 +3,34 @@
 @{
     ViewData["Title"] = "Tárgyak";
 }
-    <div class="subject-list">
-        <form>
-            <div class="form-group">
-                <label asp-for="Specification.SearchText">Search Text</label>
-                <input asp-for="Specification.SearchText" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Specification.Credit">Credit</label>
-                <input asp-for="Specification.Credit" class="form-control" />
-            </div>
-            <label>
-                @Html.RadioButtonFor(m => m.Specification.IsAsc, true)Ascending
-            </label>
-            <label>
-                @Html.RadioButtonFor(m => m.Specification.IsAsc, false)Descending
-            </label>
-            <input type="submit" value="Filter" />
-        </form>
-        <ul>
-            @foreach (var item in Model.SubjectList)
-            {
-            <li>
+<div class="subject-list">
+    <form>
+        <div class="form-group">
+            <label asp-for="Specification.SearchText">Search Text</label>
+            <input asp-for="Specification.SearchText" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Specification.Credit">Credit</label>
+            <input asp-for="Specification.Credit" class="form-control" />
+        </div>
+        <label>
+            @Html.RadioButtonFor(m => m.Specification.IsAsc, true)Ascending
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.Specification.IsAsc, false)Descending
+        </label>
+        <input class="btn btn-primary" type="submit" value="Filter" />
+    </form>
+    <ul class="list-group">
+        @foreach (var item in Model.SubjectList)
+        {
+            <li class="list-group-item">
                 <p>Name: @item.Title</p>
                 <p>Name: @item.Description</p>
+                <p>Credit: @item.Credit</p>
+                <p>Creator: @item.Creator</p>
+                <a asp-page="/Subject"  asp-route-id="@item.">Show Courses</a>
             </li>
-            }
-        </ul>
-    </div>
+        }
+    </ul>
+</div>

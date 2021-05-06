@@ -7,8 +7,8 @@ namespace Reframe.Dal.Dto
    public class SubjectSearch
     {
         public int Id { get; set; }
-        public string? SearchText { get; set; }
-        public string? Credit { get; set; }
+        public string SearchText { get; set; }
+        public string Credit { get; set; }
         public bool IsAsc { get; set; }
     }
 }

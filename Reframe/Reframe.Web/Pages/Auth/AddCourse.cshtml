@@ -2,3 +2,42 @@
 @model Reframe.Web.Pages.Auth.AddCourseModel
 @{
 }
+
+<div class="add-subject">
+    <form asp-page-handler="AddCourse" method="post">
+        <h4>Create a new account.</h4>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="AddCourse.Title">Cím</label>
+            <input asp-for="AddCourse.Title" class="form-control" />
+            <span asp-validation-for="AddCourse.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AddCourse.Time">Credit</label>
+            <input asp-for="AddCourse.Time" class="form-control" />
+            <span asp-validation-for="AddCourse.Time" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AddCourse.Description">Leírás</label>
+            <input asp-for="AddCourse.Description" class="form-control" />
+            <span asp-validation-for="AddCourse.Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddCourse.SubjectId">Tárgy</label>
+            <select asp-for="AddCourse.SubjectId" asp-items=" Model.AllSubject" class="form-select">
+            </select>
+            <span asp-validation-for="AddCourse.SubjectId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddCourse.PlaceId">Hely</label>
+            <select asp-for="AddCourse.PlaceId" asp-items=" Model.AllPlaces" class="form-select  form-select-sm">
+            </select>
+            <span asp-validation-for="AddCourse.PlaceId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Hozzáadás</button>
+    </form>
+</div>
