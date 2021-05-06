@@ -17,6 +17,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Reframe.Web.Resources.Localization;
+using Reframe.Web.Hubs;
 
 namespace Reframe.Web
 {
@@ -38,6 +39,7 @@ namespace Reframe.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -115,6 +117,7 @@ namespace Reframe.Web
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
+                endpoints.MapHub<SubjectHub>($"/{nameof(SubjectHub)}");
             });
         }
     }

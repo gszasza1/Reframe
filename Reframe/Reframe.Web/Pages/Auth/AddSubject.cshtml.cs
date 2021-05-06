@@ -23,10 +23,14 @@ namespace Reframe.Web.Pages.Auth
 
         public async Task<IActionResult> OnPostAddSubject()
         {
-            var sanitizer = new HtmlSanitizer();
-           AddSubject.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-           await  _subjectService.AddSubject(AddSubject);
-            return LocalRedirect("/");
+            if (ModelState.IsValid)
+            {
+
+                AddSubject.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                await  _subjectService.AddSubject(AddSubject);
+                return LocalRedirect("/");
+            }
+            return Page();
         }
     }
 }

@@ -1,48 +1,33 @@
 ﻿@page
 @model Reframe.Web.Pages.SubjectListModel
 @{
+    ViewData["Title"] = "Tárgyak";
 }
-<div>
-    <div class="col-md-4">
+    <div class="subject-list">
         <form>
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-
             <div class="form-group">
-                <label></label>
-                <input class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label></label>
-                <input class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label></label>
-                <input class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label></label>
-                <input class="form-control" />
+                <label asp-for="Specification.SearchText">Search Text</label>
+                <input asp-for="Specification.SearchText" class="form-control" />
             </div>
             <div class="form-group">
-                <label></label>
-                <input class="form-control" />
+                <label asp-for="Specification.Credit">Credit</label>
+                <input asp-for="Specification.Credit" class="form-control" />
             </div>
-            <button type="submit" class="btn btn-primary">Add Place</button>
+            <label>
+                @Html.RadioButtonFor(m => m.Specification.IsAsc, true)Ascending
+            </label>
+            <label>
+                @Html.RadioButtonFor(m => m.Specification.IsAsc, false)Descending
+            </label>
+            <input type="submit" value="Filter" />
         </form>
-    </div>
-    <div>
         <ul>
             @foreach (var item in Model.SubjectList)
             {
-                <li>
-                    <p>Name: @item.</p>
-                </li>
+            <li>
+                <p>Name: @item.Title</p>
+                <p>Name: @item.Description</p>
+            </li>
             }
         </ul>
     </div>
-</div>

@@ -12,9 +12,11 @@ namespace Reframe.Web.Pages
     public class SubjectListModel : PageModel
     {
         public IEnumerable<SubjectList> SubjectList { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public SubjectSearch Specification { get; set; }
         public async Task OnGetAsync(int id, [FromServices] SubjectService subjectService)
         {
-            SubjectList = await subjectService.GetSubjects();
+            SubjectList = await subjectService.GetSubjects(Specification);
         }
     }
 }
