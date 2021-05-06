@@ -17,7 +17,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Reframe.Web.Resources.Localization;
-using Reframe.Web.Hubs;
+using Reframe.Dal.Hubs;
 
 namespace Reframe.Web
 {
@@ -117,7 +117,7 @@ namespace Reframe.Web
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
-                endpoints.MapHub<SubjectHub>($"/{nameof(SubjectHub)}");
+                endpoints.MapHub<CourseHub>($"/{nameof(CourseHub)}");
             });
         }
     }

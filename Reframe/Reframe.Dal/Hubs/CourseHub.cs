@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace Reframe.Web.Hubs
+namespace Reframe.Dal.Hubs
 {
-    public class SubjectHub : Hub
+    public class CourseHub : Hub
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            await Clients.All.SendAsync("AddCourse", user, message);
         }
     }
 }
