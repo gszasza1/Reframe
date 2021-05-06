@@ -1,0 +1,19 @@
+﻿@page
+@model Reframe.Web.Pages.Auth.ListSelfSubjectModel
+@{
+}
+
+<div class="subject-list">
+    <ul class="list-group">
+        @foreach (var item in Model.SubjectList)
+        {
+            <li class="list-group-item">
+                <p>Name: @item.Title</p>
+                <p>Name: @item.Description</p>
+                <p>Credit: @item.Credit</p>
+                <p>Creator: @item.Creator</p>
+                <a asp-page="/Subject" asp-route-id="@item.">Show Courses</a>
+            </li>
+        }
+    </ul>
+</div>

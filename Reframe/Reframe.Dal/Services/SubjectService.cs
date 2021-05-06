@@ -40,12 +40,23 @@ namespace Reframe.Dal.Services
                 query = query.OrderByDescending(b => b.Title);
             }
 
-            return  await query.Select(x => new SubjectList()
+            return await query.Select(x => new SubjectList()
             {
                 Id = x.Id,
                 Credit = x.Credit,
                 Description = x.Description,
-                Title=x.Title,
+                Title = x.Title,
+                Creator = x.User.Name
+            }).ToListAsync();
+        }
+        public async Task<IEnumerable<SubjectList>> GetUserSubjects(int UserId)
+        {
+            return await _dbContext.Subjects.Where(s=>s.UserId == UserId).Select(x => new SubjectList()
+            {
+                Id = x.Id,
+                Credit = x.Credit,
+                Description = x.Description,
+                Title = x.Title,
                 Creator = x.User.Name
             }).ToListAsync();
         }

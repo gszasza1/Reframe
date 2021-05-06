@@ -1,6 +1,8 @@
 ﻿@page
 @model Reframe.Web.Pages.AddNewsModel
 @{
+
+    ViewData["Title"] = "Hír felvétel";
 }
 <form asp-page-handler="AddNews" class="p-3">
     <input  asp-for="PostNews.Description" />
