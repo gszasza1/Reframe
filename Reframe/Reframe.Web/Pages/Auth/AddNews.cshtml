@@ -5,10 +5,13 @@
     ViewData["Title"] = "Hír felvétel";
 }
 <form asp-page-handler="AddNews" class="p-3">
-    <input  asp-for="PostNews.Description" />
+    <div class="form-group">
+        <label  asp-for="PostNews.Description">Cím</label>
+        <input  asp-for="PostNews.Description" class="form-control" />
+    </div>
     <textarea asp-for="PostNews.Body" id="my-textarea"></textarea>
-  
+
     <div class="d-flex justify-content-end my-2">
-        <button type="submit" class="btn btn-outline-primary">Hozzászólok</button>
+        <button type="submit" class="btn btn-outline-primary">Hozzáadás</button>
     </div>
 </form>
