@@ -2,6 +2,10 @@
 @using Reframe.Dal.Entities
 
 @inject SignInManager<User> SignInManager
+
+@{
+    var culture = System.Globalization.CultureInfo.CurrentCulture.Name;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +38,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LanguagePartial" />
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -42,27 +47,27 @@
 
             <ul class="navbar-nav flex-grow-1 second-header container">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/PlaceList">Place list</a>
+                    <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/PlaceList"> @Localizer.Text("Place list")</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/SubjectList">Subject list</a>
+                    <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/SubjectList"> @Localizer.Text("Subject list")</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/CourseList">Course list</a>
+                    <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/CourseList"> @Localizer.Text("Course list")</a>
                 </li>
                 @if (SignInManager.IsSignedIn(User))
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Auth/AddNews">Add News</a>
+                        <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/Auth/AddNews"> @Localizer.Text("Add News")</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Auth/AddSubject">Add Subject</a>
+                        <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/Auth/AddSubject"> @Localizer.Text("Add Subject")</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Auth/AddCourse">Add Course</a>
+                        <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/Auth/AddCourse"> @Localizer.Text("Add Course")</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Auth/ListSelfSubject">Self Subject</a>
+                        <a class="nav-link text-dark" asp-area="" asp-route-culture="@culture" asp-page="/Auth/ListSelfSubject"> @Localizer.Text("Self Subject")</a>
                     </li>
 
                     <partial name="_ProfilPopup" />

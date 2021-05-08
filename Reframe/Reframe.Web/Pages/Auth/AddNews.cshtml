@@ -2,16 +2,19 @@
 @model Reframe.Web.Pages.AddNewsModel
 @{
 
-    ViewData["Title"] = "Hír felvétel";
+    ViewData["Title"] = Localizer.Text("Add News");
 }
 <form asp-page-handler="AddNews" class="p-3">
+    <h4>
+        @Localizer.Text("Add News")
+    </h4>
     <div class="form-group">
-        <label  asp-for="PostNews.Description">Cím</label>
-        <input  asp-for="PostNews.Description" class="form-control" />
+        <label asp-for="PostNews.Description"> @Localizer.Text("Title")</label>
+        <input asp-for="PostNews.Description" class="form-control" />
     </div>
     <textarea asp-for="PostNews.Body" id="my-textarea"></textarea>
 
     <div class="d-flex justify-content-end my-2">
-        <button type="submit" class="btn btn-outline-primary">Hozzáadás</button>
+        <button type="submit" class="btn btn-outline-primary"> @Localizer.Text("Add")</button>
     </div>
 </form>

@@ -1,5 +1,6 @@
 ﻿@page
 @model Reframe.Web.Pages.PlaceListModel
+@inject Reframe.Web.Utilites.CultureLocalizer Localizer
 @{
 
     ViewData["Title"] = "Termek";
@@ -7,30 +8,36 @@
 <div class="place-page">
     <div class="col-md-4">
         <form>
-            <h4>Create Place</h4>
+            <h4>
+                @Localizer.Text("Create Place")
+            </h4>
             <hr />
 
             <div class="form-group">
-                <label>Name</label>
-                <input onblur="checkIfTaken()" onchange="changing()" id="Name"  class="form-control" />
+                <label>
+                    @Localizer.Text("Name")
+                </label>
+                <input onblur="checkIfTaken()" onchange="changing()" id="Name" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label>Number of Desk</label>
+                <label>
+                    @Localizer.Text("Number of Desk")
+                </label>
                 <input id="NumberOfDesk" class="form-control" />
             </div>
 
-            <button onclick="send()" id="place-submit" class="btn btn-primary">Add Place</button>
+            <button onclick="send()" id="place-submit" class="btn btn-primary">@Localizer.Text("Add Place")</button>
         </form>
     </div>
     <div id="placeList">
-        <ul >
+        <ul>
             @foreach (var item in Model.PlaceList)
             {
                 <li id="@item.Id">
-                    <p>Name: @item.Name</p>
-                    <p>Desk: @item.NumberOfDesk</p>
-                    <p class="creation-time">Created at: @item.CreationTime</p>
+                    <p>@Localizer.Text("Name"): @item.Name</p>
+                    <p>@Localizer.Text("Desk"): @item.NumberOfDesk</p>
+                    <p class="creation-time">@Localizer.Text("Created at"): @item.CreationTime</p>
                 </li>
             }
         </ul>

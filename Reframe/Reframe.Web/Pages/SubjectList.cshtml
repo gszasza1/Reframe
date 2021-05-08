@@ -6,18 +6,20 @@
 <div class="subject-list">
     <form>
         <div class="form-group">
-            <label asp-for="Specification.SearchText">Search Text</label>
+            <label asp-for="Specification.SearchText">@Localizer.Text("Search Text")</label>
             <input asp-for="Specification.SearchText" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Specification.Credit">Credit</label>
+            <label asp-for="Specification.Credit">
+                @Localizer.Text("Credit")
+            </label>
             <input asp-for="Specification.Credit" class="form-control" />
         </div>
         <label>
-            @Html.RadioButtonFor(m => m.Specification.IsAsc, true)Ascending
+            @Html.RadioButtonFor(m => m.Specification.IsAsc, true)@Localizer.Text("Ascending")
         </label>
         <label>
-            @Html.RadioButtonFor(m => m.Specification.IsAsc, false)Descending
+            @Html.RadioButtonFor(m => m.Specification.IsAsc, false)@Localizer.Text("Descending")
         </label>
         <input class="btn btn-primary" type="submit" value="Filter" />
     </form>
@@ -25,11 +27,13 @@
         @foreach (var item in Model.SubjectList)
         {
             <li class="list-group-item">
-                <p>Name: @item.Title</p>
-                <p>Name: @item.Description</p>
-                <p>Credit: @item.Credit</p>
-                <p>Creator: @item.Creator</p>
-                <a asp-page="/Subject"  asp-route-id="@item.">Show Courses</a>
+                <p>@Localizer.Text("Name"): @item.Title</p>
+                <p>@Localizer.Text("Description"): @item.Description</p>
+                <p>@Localizer.Text("Credit"): @item.Credit</p>
+                <p>
+                    @Localizer.Text("Creator"): @item.Creator
+                </p>
+                <a asp-page="Subject" asp-route-id="@item.Id"> @Localizer.Text("Show Courses")</a>
             </li>
         }
     </ul>

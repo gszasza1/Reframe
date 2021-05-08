@@ -95,9 +95,9 @@ namespace Reframe.Dal.Services
                 Credit = result.Credit,
                 Description = result.Description,
                 Title = result.Title,
-                Creator = result.User.Name,
+                Creator = (await _dbContext.Users.FirstOrDefaultAsync(x=>x.Id == result.UserId)).Name,
                 CreationTime = result.CreationTime,
-                Courses = result.Courses
+                Courses = ( await _dbContext.Courses.Where(x => x.SubjectId == id).ToListAsync())
             };
             return response;
         }

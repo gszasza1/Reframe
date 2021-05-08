@@ -4,29 +4,32 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
+@{
+    var culture = System.Globalization.CultureInfo.CurrentCulture.Name;
+}
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            <a id="manage" class="nav-link text-dark" asp-route-culture="@culture" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
         </li>
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">@Localizer.Text("Logout")</button>
+</form>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-dark" id="password-change" asp-page="/Auth/ChangePassword">Change Password</a>
-        </li>
+            <a class="nav-link text-dark" id="password-change" asp-route-culture="@culture" asp-page="/Auth/ChangePassword">@Localizer.Text("Change Password")</a>
+</li>
     }
     else
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        </li>
+            <a class="nav-link text-dark" id="register" asp-route-culture="@culture" asp-area="Identity" asp-page="/Account/Register">@Localizer.Text("Register")</a>
+</li>
         <li class="nav-item">
-            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        </li>
+            <a class="nav-link text-dark" id="login" asp-route-culture="@culture" asp-area="Identity" asp-page="/Account/Login">@Localizer.Text("Login")</a>
+</li>
     }
 </ul>

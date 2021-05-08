@@ -1,7 +1,7 @@
 ﻿@page
 @model Reframe.Web.Pages.Auth.ListSelfSubjectModel
 @{
-    ViewData["Title"] = "Saját Tárgyak";
+    ViewData["Title"] = Localizer.Text("Self Subject");
 }
 
 <div class="subject-list">
@@ -9,11 +9,11 @@
         @foreach (var item in Model.SubjectList)
         {
             <li class="list-group-item">
-                <p>Name: @item.Title</p>
-                <p>Name: @item.Description</p>
-                <p>Credit: @item.Credit</p>
-                <p>Creator: @item.Creator</p>
-                <a asp-page="/Subject" asp-route-id="@item.">Show Courses</a>
+                <p>@Localizer.Text("Name"): @item.Title</p>
+                <p>@Localizer.Text("Description"): @item.Description</p>
+                <p>@Localizer.Text("Credit"): @item.Credit</p>
+                <p>@Localizer.Text("Creator"): @item.Creator</p>
+                <a asp-page="/Subject" asp-route-id="@item.">@Localizer.Text("Show Courses")</a>
             </li>
         }
     </ul>

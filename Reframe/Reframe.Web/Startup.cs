@@ -16,8 +16,8 @@ using System.Threading.Tasks;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Reframe.Web.Resources.Localization;
 using Reframe.Dal.Hubs;
+using Reframe.Web.Utilites;
 
 namespace Reframe.Web
 {
@@ -39,6 +39,14 @@ namespace Reframe.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+                options.RequestCultureProviders.Insert(0,
+                     new RouteValueRequestCultureProvider(supportedCultures));
+            });
             services.AddSignalR();
             services.AddCors(options =>
             {
@@ -68,15 +76,16 @@ namespace Reframe.Web
             services.AddIdentity<User, IdentityRole<int>>()
                 .AddEntityFrameworkStores<ReframeDbContext>()
                 .AddDefaultTokenProviders();
+
             services.AddAuthentication()
              .AddGoogle(options =>
             {
-           IConfigurationSection googleAuthNSection =
-               Configuration.GetSection("Authentication:Google");
+                IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
 
-           options.ClientId = googleAuthNSection["ClientId"];
-           options.ClientSecret = googleAuthNSection["ClientSecret"];
-                });
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+            });
             services
                 .AddScoped<NewService>()
                 .AddScoped<PlaceService>()
@@ -87,7 +96,14 @@ namespace Reframe.Web
                 options =>
                 {
                     options.Conventions.AuthorizeFolder("/Auth");
-                }).AddRazorRuntimeCompilation();
+                })
+               .AddRazorRuntimeCompilation()
+               .AddViewLocalization(o => o.ResourcesPath = "Resources")
+               .AddRazorPagesOptions(o =>
+               {
+                   o.Conventions.Add(new CultureTemplateRouteModelConvention());
+               });
+            services.AddSingleton<CultureLocalizer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -111,6 +127,7 @@ namespace Reframe.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseRequestLocalization();
 
             app.UseEndpoints(endpoints =>

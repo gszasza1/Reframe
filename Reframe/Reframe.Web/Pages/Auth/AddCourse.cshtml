@@ -2,44 +2,56 @@
 @model Reframe.Web.Pages.Auth.AddCourseModel
 @{
 
-    ViewData["Title"] = "Kurzus hozzáadása";
+    ViewData["Title"] = Localizer.Text("Add Course");
 }
 
 <div class="add-subject">
     <form asp-page-handler="AddCourse" method="post">
-        <h4>Create a new account.</h4>
+        <h4>
+            @Localizer.Text("Add Course")
+        </h4>
         <hr />
         <div asp-validation-summary="All" class="text-danger"></div>
 
         <div class="form-group">
-            <label asp-for="AddCourse.Title">Cím</label>
+            <label asp-for="AddCourse.Title">
+                @Localizer.Text("Title")
+            </label>
             <input asp-for="AddCourse.Title" class="form-control" />
             <span asp-validation-for="AddCourse.Title" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="AddCourse.Time">Credit</label>
+            <label asp-for="AddCourse.Time">
+                @Localizer.Text("Credit")
+            </label>
             <input asp-for="AddCourse.Time" class="form-control" />
             <span asp-validation-for="AddCourse.Time" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="AddCourse.Description">Leírás</label>
+            <label asp-for="AddCourse.Description">
+                @Localizer.Text("Description")
+            </label>
             <input asp-for="AddCourse.Description" class="form-control" />
             <span asp-validation-for="AddCourse.Description" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="AddCourse.SubjectId">Tárgy</label>
+            <label asp-for="AddCourse.SubjectId">
+                @Localizer.Text("Subject")
+            </label>
             <select asp-for="AddCourse.SubjectId" asp-items=" Model.AllSubject" class="form-select">
             </select>
             <span asp-validation-for="AddCourse.SubjectId" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="AddCourse.PlaceId">Hely</label>
+            <label asp-for="AddCourse.PlaceId">
+                @Localizer.Text("Place")
+            </label>
             <select asp-for="AddCourse.PlaceId" asp-items=" Model.AllPlaces" class="form-select  form-select-sm">
             </select>
             <span asp-validation-for="AddCourse.PlaceId" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Hozzáadás</button>
+        <button type="submit" class="btn btn-primary"> @Localizer.Text("Add")</button>
     </form>
 </div>

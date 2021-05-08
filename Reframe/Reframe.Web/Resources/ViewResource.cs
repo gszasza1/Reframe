@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Reframe.Web.Resources.Localization
+namespace Reframe.Web.Resources
 {
-    public class ExpressLocalizationResource
+    public class ViewResource
     {
     }
 }

@@ -117,10 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="Add another service to log in." xml:space="preserve">
+    <value>Bejelentkezés más rendszerről</value>
+  </data>
+  <data name="Add Course" xml:space="preserve">
+    <value>Kurzus hozzáadás</value>
+  </data>
   <data name="Add News" xml:space="preserve">
-    <value>Add News1</value>
+    <value>Hír hozzáadás</value>
+  </data>
+  <data name="Add Place" xml:space="preserve">
+    <value>Terem hozzáadása</value>
+  </data>
+  <data name="Add Subject" xml:space="preserve">
+    <value>Tárgy hozzáadás</value>
+  </data>
+  <data name="Ascending" xml:space="preserve">
+    <value>Növekvő</value>
+  </data>
+  <data name="Change Password" xml:space="preserve">
+    <value>Jelszó váltás</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Beéllítások</value>
+  </data>
+  <data name="Confirm password" xml:space="preserve">
+    <value>Jelszó megerősítés</value>
+  </data>
+  <data name="Course list" xml:space="preserve">
+    <value>Kurzus lista</value>
+  </data>
+  <data name="Create a new account." xml:space="preserve">
+    <value>Új felhasználó készítés</value>
+  </data>
+  <data name="Create Place" xml:space="preserve">
+    <value>Terem készítése</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>Készült</value>
+  </data>
+  <data name="Creator" xml:space="preserve">
+    <value>Készítő</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Kredit</value>
+  </data>
+  <data name="Current password" xml:space="preserve">
+    <value>Mostani jelszó</value>
+  </data>
+  <data name="Delete Personal Data" xml:space="preserve">
+    <value>Saját adat törlése</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve">
+    <value>A törlés megszüntetü az accountot visszaállíthatatlanul.</value>
+  </data>
+  <data name="Descending" xml:space="preserve">
+    <value>Csökkenő</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="Desk" xml:space="preserve">
+    <value>Asztal</value>
+  </data>
+  <data name="External logins" xml:space="preserve">
+    <value>Külső bejelentkezés</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home1</value>
+    <value>Főoldal</value>
+  </data>
+  <data name="Log in" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="Log in using your" xml:space="preserve">
+    <value>Jelentkezz be ezt használva</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Kijelentkezés</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Manage your account</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="New password" xml:space="preserve">
+    <value>Új jelszó</value>
+  </data>
+  <data name="Number of Desk" xml:space="preserve">
+    <value>Asztalok száma</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Jelszó</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Saját adat</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Terem</value>
+  </data>
+  <data name="Place list" xml:space="preserve">
+    <value>Terem lista</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Regisztráció</value>
+  </data>
+  <data name="Register as a new user" xml:space="preserve">
+    <value>Regisztrálás</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="Search Text" xml:space="preserve">
+    <value>Szöveges keresés</value>
+  </data>
+  <data name="Self Subject" xml:space="preserve">
+    <value>Saját tárgyak</value>
+  </data>
+  <data name="Show Courses" xml:space="preserve">
+    <value>Kurzusok mutatás</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Tárgy</value>
+  </data>
+  <data name="Subject list" xml:space="preserve">
+    <value>Tárgy lista</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Cím</value>
+  </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Jelszó frissítés</value>
+  </data>
+  <data name="Use a local account to log in." xml:space="preserve">
+    <value>Appos bejelentkezés</value>
+  </data>
+  <data name="Use another service to register." xml:space="preserve">
+    <value>Másik eszközről való bejelentkezés</value>
+  </data>
+  <data name="Use this page to detail your site's privacy policy." xml:space="preserve">
+    <value>Privacy mutatására való oldal</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Felhasználónév</value>
+  </data>
+  <data name="Webportal homework" xml:space="preserve">
+    <value>Webportálok házifeladat</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Üdvözöllek</value>
   </data>
 </root>

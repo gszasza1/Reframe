@@ -1,6 +1,27 @@
-﻿@page
+﻿@page "{id:int}"
 @model Reframe.Web.Pages.SubjectModel
 @{
 
     ViewData["Title"] = "Tárgy";
 }
+<div class ="specific-subject">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.SpecificSubject.Title</h5>
+            <p class="card-text">@Model.SpecificSubject.Description</p>
+            <p class="card-text">@Model.SpecificSubject.Creator</p>
+            <p class="card-text">@Model.SpecificSubject.Credit</p>
+
+            <ul class="list-group">
+                @foreach (var item in Model.SpecificSubject.Courses)
+                {
+                    <li class="list-group-item">
+                        <p>@Localizer.Text("Name"): @item.Title</p>
+                        <p>@Localizer.Text("Description"): @item.Description</p>
+                    </li>
+                }
+            </ul>
+            <a style="margin-top:20px;" class="btn btn-primary" href='javascript:history.go(-1)'>@Localizer.Text("Back")</a>
+        </div>
+    </div>
+</div>
