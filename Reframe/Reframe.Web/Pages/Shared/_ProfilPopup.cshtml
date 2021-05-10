@@ -8,7 +8,7 @@
 }
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-   Felhasználói adatok
+    @Localizer.Text("Personal data")
 </button>
 
 <!-- Modal -->
@@ -23,14 +23,14 @@
             </div>
             <div class="modal-body">
                 <p>Email: @user.Email</p>
-                <p>Username: @user.UserName</p>
+                <p>  @Localizer.Text("Username"): @user.UserName</p>
 
                
-                    <a class="nav-link popup-text" id="password-change" asp-page="/Auth/ChangePassword">Change Password</a>
+                <a class="nav-link popup-text" id="password-change" asp-page="/Auth/ChangePassword">  @Localizer.Text("Change Password")</a>
                 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">  @Localizer.Text("Close")</button>
             </div>
         </div>
     </div>

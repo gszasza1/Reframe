@@ -13,7 +13,7 @@
                 <p>@Localizer.Text("Description"): @item.Description</p>
                 <p>@Localizer.Text("Credit"): @item.Credit</p>
                 <p>@Localizer.Text("Creator"): @item.Creator</p>
-                <a asp-page="/Subject" asp-route-id="@item.">@Localizer.Text("Show Courses")</a>
+                <a asp-page="/Subject" asp-route-id="@item.Id">@Localizer.Text("Show Courses")</a>
             </li>
         }
     </ul>

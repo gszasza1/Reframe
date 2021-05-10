@@ -1,7 +1,7 @@
 ﻿@page "{id:int}"
 @model Reframe.Web.Pages.NewsModel
 @{
-    ViewData["Title"] = "Hír";
+    ViewData["Title"] = Localizer.Text("News");
 }
 <div class="specific-news-body">
     <div>@Html.Raw(Model.SpecificNews.Body)</div>

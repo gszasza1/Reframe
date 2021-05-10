@@ -138,17 +138,29 @@
   <data name="Ascending" xml:space="preserve">
     <value>Növekvő</value>
   </data>
+  <data name="Associate your" xml:space="preserve">
+    <value>Szolgáltatás használata: </value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Változtatás</value>
+  </data>
   <data name="Change Password" xml:space="preserve">
     <value>Jelszó váltás</value>
   </data>
   <data name="Change your account settings" xml:space="preserve">
     <value>Beéllítások</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
   <data name="Confirm password" xml:space="preserve">
     <value>Jelszó megerősítés</value>
   </data>
   <data name="Course list" xml:space="preserve">
     <value>Kurzus lista</value>
+  </data>
+  <data name="Courses" xml:space="preserve">
+    <value>Kurzusok</value>
   </data>
   <data name="Create a new account." xml:space="preserve">
     <value>Új felhasználó készítés</value>
@@ -168,6 +180,9 @@
   <data name="Current password" xml:space="preserve">
     <value>Mostani jelszó</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
   <data name="Delete Personal Data" xml:space="preserve">
     <value>Saját adat törlése</value>
   </data>
@@ -182,6 +197,9 @@
   </data>
   <data name="Desk" xml:space="preserve">
     <value>Asztal</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Letöltés</value>
   </data>
   <data name="External logins" xml:space="preserve">
     <value>Külső bejelentkezés</value>
@@ -204,8 +222,11 @@
   <data name="Logout" xml:space="preserve">
     <value>Kijelentkezés</value>
   </data>
+  <data name="Manage Email" xml:space="preserve">
+    <value>Email kezelése</value>
+  </data>
   <data name="Manage your account" xml:space="preserve">
-    <value>Manage your account</value>
+    <value>Felhasználó kezelése</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Név</value>
@@ -213,8 +234,14 @@
   <data name="New password" xml:space="preserve">
     <value>Új jelszó</value>
   </data>
+  <data name="NewEmail" xml:space="preserve">
+    <value>Új email</value>
+  </data>
   <data name="Number of Desk" xml:space="preserve">
     <value>Asztalok száma</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Oldal</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Jelszó</value>
@@ -222,11 +249,20 @@
   <data name="Personal data" xml:space="preserve">
     <value>Saját adat</value>
   </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefonszám</value>
+  </data>
   <data name="Place" xml:space="preserve">
     <value>Terem</value>
   </data>
   <data name="Place list" xml:space="preserve">
     <value>Terem lista</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Termek</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Titoktartás</value>
   </data>
   <data name="Profile" xml:space="preserve">
     <value>Profil</value>
@@ -255,6 +291,9 @@
   <data name="Subject list" xml:space="preserve">
     <value>Tárgy lista</value>
   </data>
+  <data name="Subjects" xml:space="preserve">
+    <value>Tárgyak</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Cím</value>
   </data>
@@ -278,5 +317,11 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Üdvözöllek</value>
+  </data>
+  <data name="You have successfully logged out of the application." xml:space="preserve">
+    <value>Sikeresen kijelentkezett</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data." xml:space="preserve">
+    <value>A felhasználód személyes adatokat tartalmaz. Ezen az oldalon törölni tudod</value>
   </data>
 </root>

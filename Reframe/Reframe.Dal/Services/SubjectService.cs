@@ -39,7 +39,7 @@ namespace Reframe.Dal.Services
             {
                 query = query.OrderByDescending(b => b.Title);
             }
-
+            query = query.Take(10).Skip((specification.Page)*10);
             return await query.Select(x => new SubjectList()
             {
                 Id = x.Id,

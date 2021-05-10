@@ -1,7 +1,7 @@
 ﻿@page
 @model Reframe.Web.Pages.SubjectListModel
 @{
-    ViewData["Title"] = "Tárgyak";
+    ViewData["Title"] = Localizer.Text("Subjects");
 }
 <div class="subject-list">
     <form>
@@ -14,6 +14,12 @@
                 @Localizer.Text("Credit")
             </label>
             <input asp-for="Specification.Credit" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Specification.Page">
+                @Localizer.Text("Page")
+            </label>
+            <input type="number" asp-for="Specification.Page" class="form-control" />
         </div>
         <label>
             @Html.RadioButtonFor(m => m.Specification.IsAsc, true)@Localizer.Text("Ascending")
