@@ -1,4 +1,5 @@
 ﻿
+let isEnglish = !(window.location.href + "").includes("en")
 $("#place-submit").click(function(event){
     event.preventDefault();
   });
@@ -20,11 +21,11 @@ function send(){
     })
     .done(function( data, textStatus, jqXHR) {
         NameIsTakenLoading = false;
-        $('#placeList').append( `
+        $('#placeList > ul').append( `
          <li id="${data.id}">
-        <p>Name: ${data.name}</p>
-        <p>Desk:${data.numberOfDesk}</p>
-        <p>Created at: ${data.creationTime}</p>
+        <p>${isEnglish?'Név' : 'Name'}: ${data.name}</p>
+        <p>${isEnglish?'Asztak' : 'Desk'}:${data.numberOfDesk}</p>
+        <p class="creation-time">${isEnglish?'Készült' : 'Created at'}: ${data.creationTime}</p>
     </li>` );
     })
     .fail(function( jqXHR, textstatus, errorTheown) {

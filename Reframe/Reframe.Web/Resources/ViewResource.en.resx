@@ -183,6 +183,9 @@
   <data name="External logins" xml:space="preserve">
     <value>External logins</value>
   </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>

@@ -21,7 +21,7 @@
         <label>
             @Html.RadioButtonFor(m => m.Specification.IsAsc, false)@Localizer.Text("Descending")
         </label>
-        <input class="btn btn-primary" type="submit" value="Filter" />
+        <input class="btn btn-primary" type="submit" value="@Localizer.Text("Filter")" />
     </form>
     <ul class="list-group">
         @foreach (var item in Model.SubjectList)

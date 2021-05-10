@@ -186,6 +186,9 @@
   <data name="External logins" xml:space="preserve">
     <value>Külső bejelentkezés</value>
   </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Szűrés</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Főoldal</value>
   </data>

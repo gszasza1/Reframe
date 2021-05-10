@@ -200,3 +200,7 @@ margin-right: 0;
   color:#0366d6;
   margin-left: auto;
 }
+.dropdown-font-color{
+  color: white;
+  border:none;
+}
